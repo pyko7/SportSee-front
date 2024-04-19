@@ -9,8 +9,8 @@ const Sidebar = () => {
     <nav className="sidebar">
       <div className="icons-list">
         <YogaIcon className="icon" />
-        <CyclingIcon className="icon" />
         <SwimmingIcon className="icon" />
+        <CyclingIcon className="icon" />
         <BodyBuildingIcon className="icon" />
       </div>
       <div className="copyright">
