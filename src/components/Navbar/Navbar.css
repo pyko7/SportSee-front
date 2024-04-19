@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-list {
+  width: 75%;
+  margin-right: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 1.125rem;
+}
