@@ -2,6 +2,7 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useFetch } from "./hooks/useFetch";
 import Loader from "./components/common/Loader/Loader";
+import Dashboard from "./components/Dashboard/Dashboard";
 import "./App.css";
 
 const App = () => {
@@ -20,14 +21,7 @@ const App = () => {
           {error && (
             <p>Une erreur est survenue lors de la récupération des données</p>
           )}
-          {user && (
-            <div className="title-subtitle-container">
-              <p className="title">
-                Bonjour <span>{user.data.userInfos.firstName}</span>
-              </p>
-              <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-            </div>
-          )}
+          {user && <Dashboard user={user.data} />}
         </div>
       </main>
     </div>
