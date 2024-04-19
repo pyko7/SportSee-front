@@ -1,4 +1,7 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: 1rem 2rem;
   display: flex;
@@ -7,4 +10,5 @@
   background: #000;
   -webkit-box-shadow: 5px 5px 4px -4px #000000;
   box-shadow: 5px 5px 4px -4px #000000;
+  z-index: 2;
 }

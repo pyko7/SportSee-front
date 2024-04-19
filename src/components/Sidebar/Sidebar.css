@@ -1,0 +1,37 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+}
+
+.icons-list {
+  flex: 4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.copyright {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transform: rotate(-90deg);
+  color: #fff;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
