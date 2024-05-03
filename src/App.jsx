@@ -7,37 +7,35 @@ import "./App.css";
 import User from "./model/User";
 import Activity from "./model/Activity";
 import AverageSessions from "./model/AverageSessions";
-import { useEffect } from "react";
+import Performance from "./model/Performance";
 
 const App = () => {
   const userId = 12; //add to url
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const {
     data: userData,
     isLoading,
     error,
-  } = useFetch(`http://localhost:3000/user/${userId}`);
-
+  } = useFetch(`${API_URL}/user/${userId}`);
   const user = userData ? new User(userData) : null;
 
-  const { data: userActivity } = useFetch(
-    `http://localhost:3000/user/${userId}/activity`
-  );
-
+  const { data: userActivity } = useFetch(`${API_URL}/user/${userId}/activity`);
   const activity = userActivity ? new Activity(userActivity) : null;
 
   const { data: userAverageSessions } = useFetch(
-    `http://localhost:3000/user/${userId}/average-sessions`
+    `${API_URL}/user/${userId}/average-sessions`
   );
-
   const averageSessions = userAverageSessions
     ? new AverageSessions(userAverageSessions)
     : null;
 
   const { data: userPerformances } = useFetch(
-    `http://localhost:3000/user/${userId}/performance`
+    `${API_URL}/user/${userId}/performance`
   );
-
-  const performance = userPerformances ? new Activity(userPerformances) : null;
+  const performance = userPerformances
+    ? new Performance(userPerformances)
+    : null;
 
   return (
     <div className="app">

@@ -1,12 +1,12 @@
 import DashboardHeader from "./DashboardHeader";
 import "./Dashboard.css";
-import BarChart from "../BarChart/BarChart";
+// import BarChart from "../BarChart/BarChart";
 
-const Dashboard = ({ user }) => {
+const Dashboard = ({ firstName }) => {
   return (
     <>
-      <DashboardHeader firstName={user.userInfos.firstName} />
-      <BarChart />
+      <DashboardHeader firstName={firstName} />
+      {/* <BarChart /> */}
     </>
   );
 };

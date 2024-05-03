@@ -1,59 +1,39 @@
 import { useEffect, useState } from "react";
-import {
-  USER_MAIN_DATA,
-  USER_ACTIVITY,
-  USER_AVERAGE_SESSIONS,
-  USER_PERFORMANCE,
-} from "../mocks/data";
+import { getMockedData } from "../mocks/getMockedData";
 
-const ENV_URL = "productio";
-const USER_DATA_URL = "http://localhost:3000/user/12";
-const USER_ACTIVITY_DATA_URL = "http://localhost:3000/user/12/activity";
-const AVERAGE_SESSIONS_DATA_URL =
-  "http://localhost:3000/user/12/average-sessions";
-const PERFORMANCE_DATA_URL = "http://localhost:3000/user/12/performance";
+const NODE_ENV = import.meta.env.VITE_NODE_ENV;
+const isProduction = NODE_ENV === "production";
 
-const isProduction = ENV_URL === "production";
-
+/**
+ * @description Custom hook used to fetch data
+ * @param {*} url api url
+ * @returns {Object} Object containing data, loading state and error state
+ */
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  let mockedData;
-
-  switch (url) {
-    case USER_DATA_URL:
-      mockedData = USER_MAIN_DATA;
-      break;
-    case USER_ACTIVITY_DATA_URL:
-      mockedData = USER_ACTIVITY;
-      break;
-    case AVERAGE_SESSIONS_DATA_URL:
-      mockedData = USER_AVERAGE_SESSIONS;
-      break;
-    case PERFORMANCE_DATA_URL:
-      mockedData = USER_PERFORMANCE;
-      break;
-
-    default:
-      console.log("Wrong url");
-      break;
-  }
 
   useEffect(() => {
     const fetchData = async () => {
+      if (!isProduction) {
+        const mockedData = getMockedData(url);
+        setIsLoading(false);
+        setData(mockedData);
+        return;
+      }
+
       setIsLoading(true);
+
       try {
-        if (!isProduction) {
-          setIsLoading(false);
-          setData(mockedData);
-          return;
-        }
         const res = await fetch(url);
+
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
+
         const resData = await res.json();
+
         setData(resData);
         setIsLoading(false);
         return data;
