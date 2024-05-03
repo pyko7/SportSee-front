@@ -1,13 +1,14 @@
 import DashboardHeader from "./DashboardHeader";
 import "./Dashboard.css";
-// import BarChart from "../BarChart/BarChart";
+import BarChartContainer from "../BarChart/BarChartContainer";
 
-const Dashboard = ({ firstName }) => {
+const Dashboard = ({ firstName, activity }) => {
+  const barChartTitle = "Activité quotidienne";
   return (
-    <>
+    <div className="dashboard">
       <DashboardHeader firstName={firstName} />
-      {/* <BarChart /> */}
-    </>
+      <BarChartContainer title={barChartTitle} data={activity.sessions} />
+    </div>
   );
 };
 

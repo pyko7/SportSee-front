@@ -7,7 +7,7 @@ export default class Performance {
   }
   buildPerformance() {
     this.data.forEach((el) => {
-      this.performance[this.kind[el.kind]] = el;
+      // this.performance[this.kind[el.kind]] = el;
     });
   }
 }

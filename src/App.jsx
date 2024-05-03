@@ -8,6 +8,7 @@ import User from "./model/User";
 import Activity from "./model/Activity";
 import AverageSessions from "./model/AverageSessions";
 import Performance from "./model/Performance";
+import Error from "./pages/Error/Error";
 
 const App = () => {
   const userId = 12; //add to url
@@ -44,10 +45,10 @@ const App = () => {
         <Sidebar />
         <div className="container">
           {isLoading && <Loader />}
-          {error && (
-            <p>Une erreur est survenue lors de la récupération des données</p>
+          {error && <Error />}
+          {user && activity && (
+            <Dashboard activity={activity} firstName={user.firstName} />
           )}
-          {user && <Dashboard firstName={user.firstName} />}
         </div>
       </main>
     </div>
