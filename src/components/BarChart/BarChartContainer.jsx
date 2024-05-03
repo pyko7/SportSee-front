@@ -16,6 +16,7 @@ import {
   barStyle,
   legendStyle,
   legendTextStyle,
+  tooltipLabelStyle,
   tooltipStyle,
 } from "./_style";
 
@@ -68,8 +69,11 @@ const BarChartContainer = ({ title, data }) => {
             margin: tooltipStyle.margin,
             color: tooltipStyle.color,
           }}
+          active
+          labelStyle={tooltipLabelStyle}
           formatter={(value, name) => {
             const formattedName = name.includes("kg") ? "kg" : "Kcal";
+            console.log([formattedName, value]);
             return [formattedName, value];
           }}
           separator=""

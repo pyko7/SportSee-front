@@ -45,3 +45,7 @@ export const tooltipStyle = {
   backgroundColor: "red",
   color: "white",
 };
+
+export const tooltipLabelStyle = {
+  display: "none",
+};
