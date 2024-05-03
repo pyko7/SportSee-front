@@ -21,7 +21,6 @@ import {
 } from "./_style";
 
 const BarChartContainer = ({ title, data }) => {
-  console.log(data);
   return (
     <ResponsiveContainer style={barChartContainerStyle}>
       <span style={barChartTitleStyle}>{title}</span>
@@ -73,7 +72,6 @@ const BarChartContainer = ({ title, data }) => {
           labelStyle={tooltipLabelStyle}
           formatter={(value, name) => {
             const formattedName = name.includes("kg") ? "kg" : "Kcal";
-            console.log([formattedName, value]);
             return [formattedName, value];
           }}
           separator=""
