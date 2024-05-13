@@ -2,10 +2,12 @@ import DashboardHeader from "./DashboardHeader";
 import "./Dashboard.css";
 import BarChartContainer from "../BarChart/BarChartContainer";
 import LineChartContainer from "../LineChart/LineChartContainer";
+import RadarChartContainer from "../RadarChart/RadarChartContainer";
 
-const Dashboard = ({ firstName, activity, averageSessions }) => {
+const Dashboard = ({ firstName, activity, averageSessions, performance }) => {
   const barChartTitle = "Activité quotidienne";
   const lineChartTitle = "Durée moyenne des sessions";
+
   return (
     <div className="dashboard">
       <DashboardHeader firstName={firstName} />
@@ -14,6 +16,7 @@ const Dashboard = ({ firstName, activity, averageSessions }) => {
         title={lineChartTitle}
         data={averageSessions.sessions}
       />
+      <RadarChartContainer data={performance} />
     </div>
   );
 };

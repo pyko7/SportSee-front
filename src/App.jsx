@@ -46,11 +46,12 @@ const App = () => {
         <div className="container">
           {isLoading && <Loader />}
           {error && <Error />}
-          {user && activity && averageSessions && (
+          {user && activity && averageSessions && performance && (
             <Dashboard
               activity={activity}
               averageSessions={averageSessions}
               firstName={user.firstName}
+              performance={performance}
             />
           )}
         </div>

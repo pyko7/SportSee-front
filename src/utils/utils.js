@@ -44,3 +44,13 @@ export const getWeekDay = (day) => {
   }
   return dday;
 };
+
+export const formatPerformanceData = (performance) => {
+  performance.data.forEach((item) => {
+    const kindValue = performance.kind[item.kind];
+    if (kindValue) {
+      item.kind = kindValue;
+    }
+  });
+  return performance;
+};
