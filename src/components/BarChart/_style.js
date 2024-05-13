@@ -3,12 +3,11 @@ export const barChartContainerStyle = {
   width: "100%",
   height: "100%",
   backgroundColor: "#FBFBFB",
-  borderRadius: "0.35rem",
+  borderRadius: "0.5rem",
   padding: "3rem",
 };
 
 export const barChartStyle = {
-  padding: "2rem 0",
   borderRadius: "0.35rem",
 };
 
@@ -21,14 +20,14 @@ export const barChartTitleStyle = {
 };
 
 export const barStyle = {
-  width: 15,
+  width: 10,
   gap: 10,
   barsGap: 50,
   color: {
     primary: "#E60000",
     secondary: "#282D30",
   },
-  radius: [20, 20, 0, 0],
+  radius: [10, 10, 0, 0],
 };
 
 export const legendStyle = {
@@ -44,6 +43,7 @@ export const tooltipStyle = {
   padding: "0 0.5rem",
   backgroundColor: "red",
   color: "white",
+  border: "none",
 };
 
 export const tooltipLabelStyle = {

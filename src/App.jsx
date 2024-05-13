@@ -46,8 +46,12 @@ const App = () => {
         <div className="container">
           {isLoading && <Loader />}
           {error && <Error />}
-          {user && activity && (
-            <Dashboard activity={activity} firstName={user.firstName} />
+          {user && activity && averageSessions && (
+            <Dashboard
+              activity={activity}
+              averageSessions={averageSessions}
+              firstName={user.firstName}
+            />
           )}
         </div>
       </main>

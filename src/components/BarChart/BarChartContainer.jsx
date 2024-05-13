@@ -63,6 +63,7 @@ const BarChartContainer = ({ title, data }) => {
         <Tooltip
           contentStyle={{
             backgroundColor: tooltipStyle.backgroundColor,
+            border: tooltipStyle.border,
           }}
           itemStyle={{
             margin: tooltipStyle.margin,
