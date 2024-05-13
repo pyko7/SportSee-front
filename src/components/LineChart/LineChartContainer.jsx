@@ -14,8 +14,11 @@ import {
   lineChartTooltipStyle,
   xAxisStyle,
 } from "./_style";
+import { getWeekDay } from "../../utils/utils";
 
 const LineChartContainer = ({ title, data }) => {
+  const ticksValue = ["L", "M", "M", "J", "V", "S", "D"];
+
   return (
     <ResponsiveContainer
       width="100%"
@@ -29,7 +32,9 @@ const LineChartContainer = ({ title, data }) => {
           axisLine={false}
           tickLine={false}
           dataKey="day"
+          type="category"
           tick={xAxisStyle}
+          tickFormatter={(val) => getWeekDay(val)}
         />
         <YAxis axisLine={false} tickLine={false} hide dataKey="sessionLength" />
         <Tooltip
