@@ -52,6 +52,7 @@ const App = () => {
               averageSessions={averageSessions}
               firstName={user.firstName}
               performance={performance}
+              score={user.todayScore}
             />
           )}
         </div>
