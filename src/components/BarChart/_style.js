@@ -1,7 +1,6 @@
 export const barChartContainerStyle = {
   position: "relative",
   width: "100%",
-  height: "100%",
   backgroundColor: "#FBFBFB",
   borderRadius: "0.5rem",
   padding: "3rem",

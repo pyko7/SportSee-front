@@ -23,14 +23,24 @@ import {
 const BarChartContainer = ({ title, data }) => {
   return (
     <ResponsiveContainer style={barChartContainerStyle}>
-      <span style={barChartTitleStyle}>{title}</span>
       <BarChart
+        height={300}
         data={data}
         barGap={barStyle.gap}
         barSize={barStyle.width}
         barCategoryGap={barStyle.barsGap}
         style={barChartStyle}
       >
+        <text
+          x="0"
+          y="0"
+          textAnchor="start"
+          dominantBaseline="hanging"
+          style={barChartTitleStyle}
+        >
+          {title}
+        </text>
+
         <Legend
           iconType="circle"
           iconSize={8}

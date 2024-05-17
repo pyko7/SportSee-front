@@ -10,11 +10,15 @@ import {
   RadialBarChartLabel,
 } from "./_styles";
 
-const RadialBarChartContainer = ({ data }) => {
+const RadialBarChartContainer = ({ data, title }) => {
   const score = [{ name: "Score", value: data * 100 }];
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer
+      width="100%"
+      height={250}
+      style={{ background: "#FBFBFB", borderRadius: "5px" }}
+    >
       <RadialBarChart
         cx="50%"
         cy="50%"
@@ -39,7 +43,7 @@ const RadialBarChartContainer = ({ data }) => {
           dominantBaseline="hanging"
           style={RadialBarChartTitle}
         >
-          Score
+          {title}
         </text>
         <text
           x="50%"

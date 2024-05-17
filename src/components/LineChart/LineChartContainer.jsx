@@ -22,12 +22,20 @@ const LineChartContainer = ({ title, data }) => {
   return (
     <ResponsiveContainer
       width="100%"
-      height="100%"
+      height={250}
       style={lineChartContainerStyle}
     >
-      <span style={lineChartTitleStyle}>{title}</span>
+      <LineChart width="100%" data={data}>
+        <text
+          x="10"
+          y="10"
+          textAnchor="start"
+          dominantBaseline="hanging"
+          style={lineChartTitleStyle}
+        >
+          {title}
+        </text>
 
-      <LineChart width="100%" height="100%" data={data}>
         <XAxis
           axisLine={false}
           tickLine={false}
@@ -35,6 +43,7 @@ const LineChartContainer = ({ title, data }) => {
           type="category"
           tick={xAxisStyle}
           tickFormatter={(val) => getWeekDay(val)}
+          padding={{ left: 7, right: 7 }}
         />
         <YAxis axisLine={false} tickLine={false} hide dataKey="sessionLength" />
         <Tooltip

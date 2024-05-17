@@ -19,7 +19,7 @@ export const xAxisStyle = {
 };
 
 export const lineChartTitleStyle = {
-  fontSize: "1.35rem",
-  color: "#FFF",
+  fontSize: "1.15rem",
+  fill: "#FFF",
   opacity: 0.5,
 };

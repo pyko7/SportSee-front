@@ -48,6 +48,10 @@ const App = () => {
           {error && <Error />}
           {user && activity && averageSessions && performance && (
             <Dashboard
+              calorieCount={user.calorieCount}
+              proteinCount={user.proteinCount}
+              carbohydrateCount={user.carbohydrateCount}
+              lipidCount={user.lipidCount}
               activity={activity}
               averageSessions={averageSessions}
               firstName={user.firstName}
