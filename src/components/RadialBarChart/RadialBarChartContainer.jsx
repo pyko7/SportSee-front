@@ -1,33 +1,64 @@
 import {
-  Legend,
+  PolarAngleAxis,
   RadialBar,
   RadialBarChart,
   ResponsiveContainer,
 } from "recharts";
+import {
+  RadialBarChartTitle,
+  RadialBarChartLabelScore,
+  RadialBarChartLabel,
+} from "./_styles";
 
 const RadialBarChartContainer = ({ data }) => {
   const score = [{ name: "Score", value: data * 100 }];
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadialBarChart
-        width={730}
-        height={250}
-        innerRadius="30%"
-        outerRadius="80%"
-        data={score}
-        startAngle={0}
-        endAngle={score[0].value}
+        cx="50%"
+        cy="50%"
+        innerRadius="60%"
+        outerRadius="70%"
         barSize={10}
-        style={{ background: "#FBFBFB", borderRadius: "5px" }}
+        data={score}
+        startAngle={90}
+        endAngle={450}
       >
-        <RadialBar
-          label={{
-            position: "center",
-            fill: "#000",
-          }}
-          dataKey="value"
-          style={{ fill: "red" }}
+        <PolarAngleAxis
+          type="number"
+          domain={[0, 100]}
+          angleAxisId={0}
+          tick={false}
         />
+        <RadialBar background fill="red" dataKey="value" cornerRadius={"50%"} />
+        <text
+          x="20"
+          y="20"
+          textAnchor="start"
+          dominantBaseline="hanging"
+          style={RadialBarChartTitle}
+        >
+          Score
+        </text>
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          style={RadialBarChartLabelScore}
+        >
+          {score[0].value}%
+        </text>
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          style={RadialBarChartLabel}
+        >
+          de votre objectif
+        </text>
       </RadialBarChart>
     </ResponsiveContainer>
   );
