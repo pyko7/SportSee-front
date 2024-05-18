@@ -10,7 +10,7 @@ export const RadialBarChartLabelScore = {
 };
 
 export const RadialBarChartLabel = {
-  fontSize: " 10px",
-  transform: " translateY(12px)",
+  fontSize: "14px",
+  transform: "translateY(12px)",
   fill: "#74798C",
 };

@@ -7,12 +7,17 @@ import { CardContainer, CardTitle, CardSubtitle } from "./_styles";
  * @returns {React.FC}
  */
 const Card = ({ title, subtitle, Icon }) => {
+  const suffix = subtitle === "Calories" ? "kCal" : "g";
+
   return (
     <div style={CardContainer}>
       <Icon />
       <div>
         <div>
-          <span style={CardTitle}>{title}</span>
+          <span style={CardTitle}>
+            {title}
+            {suffix}
+          </span>
         </div>
         <div>
           <span style={CardSubtitle}>{subtitle}</span>

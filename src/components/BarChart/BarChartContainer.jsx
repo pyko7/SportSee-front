@@ -22,9 +22,8 @@ import {
 
 const BarChartContainer = ({ title, data }) => {
   return (
-    <ResponsiveContainer style={barChartContainerStyle}>
+    <ResponsiveContainer height={300} style={barChartContainerStyle}>
       <BarChart
-        height={300}
         data={data}
         barGap={barStyle.gap}
         barSize={barStyle.width}
@@ -40,7 +39,6 @@ const BarChartContainer = ({ title, data }) => {
         >
           {title}
         </text>
-
         <Legend
           iconType="circle"
           iconSize={8}

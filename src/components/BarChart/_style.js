@@ -1,20 +1,20 @@
 export const barChartContainerStyle = {
-  position: "relative",
-  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   backgroundColor: "#FBFBFB",
   borderRadius: "0.5rem",
-  padding: "3rem",
+  padding: "1rem",
+  position: "relative",
 };
 
 export const barChartStyle = {
+  width: "fit-content",
+  height: "75%",
   borderRadius: "0.35rem",
 };
 
 export const barChartTitleStyle = {
-  position: "absolute",
-  top: "2.7rem",
-  left: 80,
-  display: "block",
   color: "#20253A",
 };
 
@@ -30,8 +30,7 @@ export const barStyle = {
 };
 
 export const legendStyle = {
-  top: 0,
-  right: 80,
+  top: -30,
   fontSize: "0.75rem",
 };
 

@@ -1,17 +1,17 @@
 export const CardContainer = {
-  padding: "15px",
+  padding: "1.5rem",
   display: "flex",
+  alignItems: "center",
   justifyContent: "space-between",
   backgroundColor: "#FBFBFB",
   borderRadius: "5px",
 };
 
-export const CardTextContainer = {};
-
 export const CardTitle = {
   display: "block",
   fontWeight: "bold",
   fontSize: "20px",
+  marginBottom: "5px",
 };
 
 export const CardSubtitle = {
