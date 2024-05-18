@@ -4,6 +4,10 @@ import Loader from "../common/Loader/Loader";
 import Error from "../../pages/Error/Error";
 import BarChartContainer from "../BarChart/BarChartContainer";
 
+/**
+ * @description Fetch user activity data and display the BarChartContainer component
+ * @returns {React.FC}
+ */
 const ActivityComponent = () => {
   const userId = 12;
   const API_URL = import.meta.env.VITE_API_URL;

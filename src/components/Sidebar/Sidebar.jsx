@@ -4,6 +4,10 @@ import SwimmingIcon from "../common/Icons/SwimmingIcon";
 import BodyBuildingIcon from "../common/Icons/BodyBuildingIcon";
 import "./Sidebar.css";
 
+/**
+ * @description Represents the sidebar of the page
+ * @returns {React.FC}
+ */
 const Sidebar = () => {
   return (
     <nav className="sidebar">
@@ -14,7 +18,7 @@ const Sidebar = () => {
         <BodyBuildingIcon className="icon" />
       </div>
       <div className="copyright">
-        <p>Copiryght, SportSee 2020</p>
+        <p>Copyright, SportSee 2020</p>
       </div>
     </nav>
   );

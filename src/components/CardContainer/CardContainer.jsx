@@ -4,6 +4,15 @@ import ProteinIcon from "../common/Icons/ProteinIcon";
 import CarbsIcon from "../common/Icons/CarbsIcon";
 import FatIcon from "../common/Icons/FatIcon";
 import "./CardContainer.css";
+
+/**
+ * @description Represents a list of cards
+ * @param {string} calorieCount amount of calories
+ * @param {string} proteinCount amount of proteins
+ * @param {string} carbohydrateCount amount of carbs
+ * @param {string} lipidCount amount of lipids
+ * @returns {React.FC}
+ */
 const CardContainer = ({
   calorieCount,
   proteinCount,

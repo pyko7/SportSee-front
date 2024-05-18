@@ -4,6 +4,10 @@ import Error from "../../pages/Error/Error";
 import { useFetch } from "../../hooks/useFetch";
 import LineChartContainer from "../LineChart/LineChartContainer";
 
+/**
+ * @description Fetch user average sessions data and display the LineChartContainer component
+ * @returns {React.FC}
+ */
 const AverageSessionsComponent = () => {
   const userId = 12;
   const API_URL = import.meta.env.VITE_API_URL;

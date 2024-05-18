@@ -4,6 +4,10 @@ import Error from "../../pages/Error/Error";
 import { useFetch } from "../../hooks/useFetch";
 import RadarChartContainer from "../RadarChart/RadarChartContainer";
 
+/**
+ * @description Fetch user performance data and display the RadarChartContainer component
+ * @returns {React.FC}
+ */
 const PerformanceComponent = () => {
   const userId = 12;
   const API_URL = import.meta.env.VITE_API_URL;

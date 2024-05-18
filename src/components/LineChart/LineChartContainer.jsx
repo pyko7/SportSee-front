@@ -16,9 +16,13 @@ import {
 } from "./_style";
 import { getWeekDay } from "../../utils/utils";
 
+/**
+ * @description Represents a linechart element
+ * @param {string} title title of the linechart
+ * @param {Object} data data represented in the linechart
+ * @returns {React.FC}
+ */
 const LineChartContainer = ({ title, data }) => {
-  const ticksValue = ["L", "M", "M", "J", "V", "S", "D"];
-
   return (
     <ResponsiveContainer
       width="100%"

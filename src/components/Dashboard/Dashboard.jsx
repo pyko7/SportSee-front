@@ -10,6 +10,10 @@ import ActivityComponent from "../Activity/Activity";
 import AverageSessionsComponent from "../AverageSessions/AverageSessions";
 import PerformanceComponent from "../Performance/Performance";
 
+/**
+ * @description Represents all charts elements and the cards list
+ * @returns {React.FC}
+ */
 const Dashboard = () => {
   const userId = 12;
   const API_URL = import.meta.env.VITE_API_URL;

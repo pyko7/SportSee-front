@@ -1,14 +1,17 @@
 import {
-  Legend,
   PolarAngleAxis,
   PolarGrid,
-  PolarRadiusAxis,
   Radar,
   RadarChart,
   ResponsiveContainer,
 } from "recharts";
 import { formatPerformanceData } from "../../utils/utils";
 
+/**
+ * @description Represents a radarchart element
+ * @param {Object} data data represented in the radarchart
+ * @returns {React.FC}
+ */
 const RadarChartContainer = ({ data }) => {
   const formattedData = formatPerformanceData(data);
   return (

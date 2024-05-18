@@ -20,6 +20,12 @@ import {
   tooltipStyle,
 } from "./_style";
 
+/**
+ * @description Represents a barchart element
+ * @param {string} title title of the barchart
+ * @param {Object} data data represented in the barchart
+ * @returns {React.FC}
+ */
 const BarChartContainer = ({ title, data }) => {
   return (
     <ResponsiveContainer height={300} style={barChartContainerStyle}>

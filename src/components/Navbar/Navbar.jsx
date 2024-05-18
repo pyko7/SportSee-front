@@ -1,6 +1,10 @@
 import { navbarLinks } from "./utils";
 import "./Navbar.css";
 
+/**
+ * @description Represents the navbar
+ * @returns
+ */
 const Navbar = () => {
   return (
     <nav className="navbar">

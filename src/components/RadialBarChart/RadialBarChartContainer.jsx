@@ -10,6 +10,12 @@ import {
   RadialBarChartLabel,
 } from "./_styles";
 
+/**
+ * @description Represents a radialbarchart element
+ * @param {string} title title of the radialbarchart
+ * @param {Object} data data represented in the radialbarchart
+ * @returns {React.FC}
+ */
 const RadialBarChartContainer = ({ data, title }) => {
   const score = [{ name: "Score", value: data * 100 }];
 
