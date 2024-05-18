@@ -1,5 +1,4 @@
-import { CardContainer, CardTitle, CardSubtitle } from "./_styles";
-
+import "./Card.css";
 /**
  * @param {string} title Title of the card
  * @param {string} subtitle Subtitle of the card
@@ -10,17 +9,17 @@ const Card = ({ title, subtitle, Icon }) => {
   const suffix = subtitle === "Calories" ? "kCal" : "g";
 
   return (
-    <div style={CardContainer}>
+    <div className="card-container">
       <Icon />
       <div>
         <div>
-          <span style={CardTitle}>
+          <span className="card-title">
             {title}
             {suffix}
           </span>
         </div>
         <div>
-          <span style={CardSubtitle}>{subtitle}</span>
+          <span className="card-subtitle">{subtitle}</span>
         </div>
       </div>
     </div>
