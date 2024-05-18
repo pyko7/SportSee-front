@@ -1,51 +1,55 @@
 import DashboardHeader from "./DashboardHeader";
 import "./Dashboard.css";
-import BarChartContainer from "../BarChart/BarChartContainer";
-import LineChartContainer from "../LineChart/LineChartContainer";
-import RadarChartContainer from "../RadarChart/RadarChartContainer";
-import RadialBarChartContainer from "../RadialBarChart/RadialBarChartContainer";
 import CardContainer from "../CardContainer/CardContainer";
+import User from "../../model/User";
+import Error from "../../pages/Error/Error";
+import Loader from "../common/Loader/Loader";
+import { useFetch } from "../../hooks/useFetch";
+import Score from "../Score/Score";
+import ActivityComponent from "../Activity/Activity";
+import AverageSessionsComponent from "../AverageSessions/AverageSessions";
+import PerformanceComponent from "../Performance/Performance";
 
-const Dashboard = ({
-  calorieCount,
-  proteinCount,
-  carbohydrateCount,
-  lipidCount,
-  firstName,
-  activity,
-  averageSessions,
-  performance,
-  score,
-}) => {
-  const barChartTitle = "Activité quotidienne";
-  const lineChartTitle = "Durée moyenne des sessions";
-  const radarBarChartTitle = "Score";
+const Dashboard = () => {
+  const userId = 12;
+  const API_URL = import.meta.env.VITE_API_URL;
 
+  const { data, isLoading, error } = useFetch(`${API_URL}/user/${userId}`);
+  const user = data ? new User(data) : null;
   return (
-    <div className="dashboard">
-      <DashboardHeader firstName={firstName} />
-      <div className="charts-cards-container">
-        <div className="charts-container">
-          <BarChartContainer title={barChartTitle} data={activity.sessions} />
-          <div className="charts-bottom-container ">
-            <LineChartContainer
-              title={lineChartTitle}
-              data={averageSessions.sessions}
-            />
-            <RadarChartContainer data={performance} />
-            <RadialBarChartContainer title={radarBarChartTitle} data={score} />
+    <>
+      {isLoading ? <Loader /> : null}
+      {error ? <Error /> : null}
+      <div className="dashboard">
+        {user && <DashboardHeader firstName={user.firstName} />}
+        <div className="charts-cards-container">
+          <div className="charts-container">
+            <ActivityComponent />
+            <div className="charts-bottom-container ">
+              <AverageSessionsComponent />
+              <PerformanceComponent />
+              {user && (
+                <Score
+                  score={user.todayScore}
+                  isLoading={isLoading}
+                  error={error}
+                />
+              )}
+            </div>
+          </div>
+          <div className="cards-container">
+            {user && (
+              <CardContainer
+                calorieCount={user.calorieCount}
+                proteinCount={user.proteinCount}
+                carbohydrateCount={user.carbohydrateCount}
+                lipidCount={user.lipidCount}
+              />
+            )}
           </div>
         </div>
-        <div className="cards-container">
-          <CardContainer
-            calorieCount={calorieCount}
-            proteinCount={proteinCount}
-            carbohydrateCount={carbohydrateCount}
-            lipidCount={lipidCount}
-          />
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 
