@@ -15,7 +15,7 @@ import PerformanceComponent from "../Performance/Performance";
  * @returns {React.FC}
  */
 const Dashboard = () => {
-  const userId = 12;
+  const userId = import.meta.env.VITE_USER_ID;
   const API_URL = import.meta.env.VITE_API_URL;
 
   const { data, isLoading, error } = useFetch(`${API_URL}/user/${userId}`);

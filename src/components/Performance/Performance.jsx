@@ -9,7 +9,7 @@ import RadarChartContainer from "../RadarChart/RadarChartContainer";
  * @returns {React.FC}
  */
 const PerformanceComponent = () => {
-  const userId = 12;
+  const userId = import.meta.env.VITE_USER_ID;
   const API_URL = import.meta.env.VITE_API_URL;
 
   const { data, isLoading, error } = useFetch(

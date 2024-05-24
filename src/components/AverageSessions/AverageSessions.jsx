@@ -9,7 +9,7 @@ import LineChartContainer from "../LineChart/LineChartContainer";
  * @returns {React.FC}
  */
 const AverageSessionsComponent = () => {
-  const userId = 12;
+  const userId = import.meta.env.VITE_USER_ID;
   const API_URL = import.meta.env.VITE_API_URL;
   const lineChartTitle = "Durée moyenne des sessions";
 

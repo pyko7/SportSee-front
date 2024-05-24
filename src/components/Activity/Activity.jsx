@@ -9,7 +9,7 @@ import BarChartContainer from "../BarChart/BarChartContainer";
  * @returns {React.FC}
  */
 const ActivityComponent = () => {
-  const userId = 12;
+  const userId = import.meta.env.VITE_USER_ID;
   const API_URL = import.meta.env.VITE_API_URL;
   const barChartTitle = "Activité quotidienne";
 

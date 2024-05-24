@@ -27,13 +27,11 @@ export const useFetch = (url) => {
 
       try {
         const res = await fetch(url);
-
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
 
         const resData = await res.json();
-
         setData(resData);
         setIsLoading(false);
         return data;
