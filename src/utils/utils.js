@@ -30,12 +30,36 @@ export const getWeekDay = (day) => {
   return dday;
 };
 
+const translateKindValue = (value) => {
+  let translatedKindValue = value;
+  switch (value) {
+    case "energy":
+      translatedKindValue = "energie";
+      break;
+    case "strength":
+      translatedKindValue = "force";
+      break;
+    case "speed":
+      translatedKindValue = "vitesse";
+      break;
+    case "intensity":
+      translatedKindValue = "intensité";
+      break;
+
+    default:
+      translatedKindValue = value;
+      break;
+  }
+  return translatedKindValue;
+};
+
 export const formatPerformanceData = (performance) => {
   performance.data.forEach((item) => {
     const kindValue = performance.kind[item.kind];
     if (kindValue) {
-      item.kind = kindValue;
+      item.kind = translateKindValue(kindValue);
     }
   });
+
   return performance;
 };
