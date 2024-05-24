@@ -12,10 +12,18 @@ const Sidebar = () => {
   return (
     <nav className="sidebar">
       <div className="icons-list">
-        <YogaIcon className="icon" />
-        <SwimmingIcon className="icon" />
-        <CyclingIcon className="icon" />
-        <BodyBuildingIcon className="icon" />
+        <a href="#">
+          <YogaIcon className="icon" />
+        </a>
+        <a href="#">
+          <SwimmingIcon className="icon" />
+        </a>
+        <a href="#">
+          <CyclingIcon className="icon" />
+        </a>
+        <a href="#">
+          <BodyBuildingIcon className="icon" />
+        </a>
       </div>
       <div className="copyright">
         <p>Copyright, SportSee 2020</p>

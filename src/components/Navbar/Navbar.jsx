@@ -10,7 +10,9 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar-list">
         {navbarLinks.map((link) => (
-          <li key={link.id}>{link.title}</li>
+          <li key={link.id}>
+            <a href="#">{link.title}</a>
+          </li>
         ))}
       </ul>
     </nav>
