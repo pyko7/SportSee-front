@@ -131,7 +131,12 @@ const LineChartContainer = ({ title, data }) => {
           stroke="#fff"
           dy={5}
         />
-        <YAxis axisLine={false} tickLine={false} hide dataKey="sessionLength" />
+        <YAxis
+          domain={["dataMin", "dataMax + 5"]}
+          dataKey="sessionLength"
+          hide
+        />
+
         <Tooltip
           contentStyle={{ width: lineChartTooltipStyle.width }}
           itemStyle={{ color: lineChartTooltipStyle.color }}

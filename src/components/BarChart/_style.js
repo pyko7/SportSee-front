@@ -1,19 +1,3 @@
-export const barChartContainerStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "#FBFBFB",
-  borderRadius: "0.5rem",
-  padding: "1rem",
-  position: "relative",
-};
-
-export const barChartStyle = {
-  width: "fit-content",
-  height: "75%",
-  borderRadius: "0.35rem",
-};
-
 export const barChartTitleStyle = {
   color: "#20253A",
 };

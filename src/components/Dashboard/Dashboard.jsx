@@ -28,10 +28,16 @@ const Dashboard = () => {
         {user && <DashboardHeader firstName={user.firstName} />}
         <div className="charts-cards-container">
           <div className="charts-container">
-            <ActivityComponent />
-            <div className="charts-bottom-container ">
-              <AverageSessionsComponent />
-              <PerformanceComponent />
+            <div className="charts-top-container">
+              <ActivityComponent />
+            </div>
+            <div className="charts-bottom-container">
+              <div className="charts-bottom">
+                <AverageSessionsComponent />
+              </div>
+              <div className="charts-bottom">
+                <PerformanceComponent />
+              </div>
               {user && (
                 <Score
                   score={user.todayScore}

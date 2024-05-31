@@ -17,10 +17,11 @@ export const lineChartTooltipStyle = {
 export const xAxisStyle = {
   fill: "#FFF",
   opacity: 0.5,
+  fontSize: "12px",
 };
 
 export const lineChartTitleStyle = {
-  fontSize: "1.15rem",
+  fontSize: "1rem",
   fill: "#FFF",
   opacity: 0.5,
 };

@@ -15,11 +15,7 @@ import { formatPerformanceData } from "../../utils/utils";
 const RadarChartContainer = ({ data }) => {
   const formattedData = formatPerformanceData(data);
   return (
-    <ResponsiveContainer
-      width="100%"
-      height={250}
-      style={{ backgroundColor: "#282D30", borderRadius: "5px" }}
-    >
+    <ResponsiveContainer style={{ backgroundColor: "#282D30" }}>
       <RadarChart
         cx="50%"
         cy="50%"
@@ -27,8 +23,15 @@ const RadarChartContainer = ({ data }) => {
         data={formattedData.data}
         style={{ padding: "0.5rem" }}
       >
-        <PolarGrid stroke="#FFF" />
-        <PolarAngleAxis width="100%" dataKey="kind" tick={{ fill: "#FFF" }} />
+        <PolarGrid stroke="#FFF" radialLines={false} />
+        <PolarAngleAxis
+          width="100%"
+          dataKey="kind"
+          fontSize={12}
+          strokeWidth={2}
+          tick={{ fill: "#FFF" }}
+          tickLine={false}
+        />
         <Radar name="Value" dataKey="value" fill="#FF0101" fillOpacity={0.7} />
       </RadarChart>
     </ResponsiveContainer>
