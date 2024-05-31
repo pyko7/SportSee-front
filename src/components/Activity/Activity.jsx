@@ -20,7 +20,7 @@ const ActivityComponent = () => {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       {activity && (
         <BarChartContainer title={barChartTitle} data={activity.sessions} />
       )}

@@ -21,10 +21,11 @@ const Dashboard = () => {
 
   const { data, isLoading, error } = useFetch(`${API_URL}/user/${id}`);
   const user = data ? new User(data) : null;
+
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       <div className="dashboard">
         {user && <DashboardHeader firstName={user.firstName} />}
         <div className="charts-cards-container">

@@ -39,7 +39,6 @@
 }
 
 .charts-top-container {
-  position: relative;
   width: 100%;
   height: 320px;
   padding: 1rem;
@@ -49,7 +48,6 @@
 }
 
 .charts-bottom {
-  position: relative;
   height: 16rem;
   width: 100%;
   overflow: hidden;

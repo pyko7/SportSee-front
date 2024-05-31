@@ -22,7 +22,7 @@ const AverageSessionsComponent = () => {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       {averageSessions && (
         <LineChartContainer
           title={lineChartTitle}

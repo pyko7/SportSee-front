@@ -20,7 +20,7 @@ const PerformanceComponent = () => {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       {performance && <RadarChartContainer data={performance} />}
     </>
   );
