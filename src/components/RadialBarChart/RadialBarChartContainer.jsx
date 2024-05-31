@@ -17,7 +17,7 @@ import {
  * @returns {React.FC}
  */
 const RadialBarChartContainer = ({ data, title }) => {
-  const score = [{ name: "Score", value: data * 100 }];
+  const score = [{ name: "Score", value: (data * 100).toFixed() }];
 
   return (
     <ResponsiveContainer
