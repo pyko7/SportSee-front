@@ -58,6 +58,7 @@ const LineChartContainer = ({ title, data }) => {
             return ["min", value];
           }}
           separator=""
+          cursor={false}
         />
         <Line
           type="monotone"
