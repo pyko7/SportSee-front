@@ -15,7 +15,7 @@ const Score = ({ score, isLoading, error }) => {
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       {score && (
         <RadialBarChartContainer title={radarBarChartTitle} data={score} />
       )}

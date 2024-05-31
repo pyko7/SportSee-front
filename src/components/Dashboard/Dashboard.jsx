@@ -9,29 +9,37 @@ import Score from "../Score/Score";
 import ActivityComponent from "../Activity/Activity";
 import AverageSessionsComponent from "../AverageSessions/AverageSessions";
 import PerformanceComponent from "../Performance/Performance";
+import { useParams } from "react-router-dom";
 
 /**
  * @description Represents all charts elements and the cards list
  * @returns {React.FC}
  */
 const Dashboard = () => {
-  const userId = import.meta.env.VITE_USER_ID;
   const API_URL = import.meta.env.VITE_API_URL;
+  const { id } = useParams();
 
-  const { data, isLoading, error } = useFetch(`${API_URL}/user/${userId}`);
+  const { data, isLoading, error } = useFetch(`${API_URL}/user/${id}`);
   const user = data ? new User(data) : null;
+
   return (
     <>
       {isLoading ? <Loader /> : null}
-      {error ? <Error /> : null}
+      {error ? <Error error={error} /> : null}
       <div className="dashboard">
         {user && <DashboardHeader firstName={user.firstName} />}
         <div className="charts-cards-container">
           <div className="charts-container">
-            <ActivityComponent />
-            <div className="charts-bottom-container ">
-              <AverageSessionsComponent />
-              <PerformanceComponent />
+            <div className="charts-top-container">
+              <ActivityComponent />
+            </div>
+            <div className="charts-bottom-container">
+              <div className="charts-bottom">
+                <AverageSessionsComponent />
+              </div>
+              <div className="charts-bottom">
+                <PerformanceComponent />
+              </div>
               {user && (
                 <Score
                   score={user.todayScore}

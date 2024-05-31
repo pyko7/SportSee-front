@@ -1,5 +1,6 @@
 export const lineChartContainerStyle = {
-  backgroundColor: "#E60000",
+  width: "100%",
+  height: "100%",
   borderRadius: "0.35rem",
 };
 
@@ -16,10 +17,11 @@ export const lineChartTooltipStyle = {
 export const xAxisStyle = {
   fill: "#FFF",
   opacity: 0.5,
+  fontSize: "12px",
 };
 
 export const lineChartTitleStyle = {
-  fontSize: "1.15rem",
+  fontSize: "1rem",
   fill: "#FFF",
   opacity: 0.5,
 };

@@ -17,7 +17,7 @@ import {
  * @returns {React.FC}
  */
 const RadialBarChartContainer = ({ data, title }) => {
-  const score = [{ name: "Score", value: data * 100 }];
+  const score = [{ name: "Score", value: (data * 100).toFixed() }];
 
   return (
     <ResponsiveContainer
@@ -41,7 +41,13 @@ const RadialBarChartContainer = ({ data, title }) => {
           angleAxisId={0}
           tick={false}
         />
-        <RadialBar background fill="red" dataKey="value" cornerRadius={"50%"} />
+        <RadialBar
+          background
+          fill="red"
+          dataKey="value"
+          cornerRadius={"50%"}
+          style={{ padding: "1rem" }}
+        />
         <text
           x="20"
           y="20"
@@ -53,7 +59,7 @@ const RadialBarChartContainer = ({ data, title }) => {
         </text>
         <text
           x="50%"
-          y="50%"
+          y="45%"
           textAnchor="middle"
           dominantBaseline="middle"
           style={RadialBarChartLabelScore}
@@ -62,12 +68,17 @@ const RadialBarChartContainer = ({ data, title }) => {
         </text>
         <text
           x="50%"
-          y="50%"
+          y="45%"
           textAnchor="middle"
           dominantBaseline="middle"
           style={RadialBarChartLabel}
         >
-          de votre objectif
+          <tspan x="50%" dy="1.2em">
+            de votre
+          </tspan>
+          <tspan x="50%" dy="1.2em">
+            objectif
+          </tspan>
         </text>
       </RadialBarChart>
     </ResponsiveContainer>

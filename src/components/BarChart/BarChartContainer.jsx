@@ -9,8 +9,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import {
-  barChartContainerStyle,
-  barChartStyle,
   barChartTitleStyle,
   barStyle,
   legendStyle,
@@ -27,17 +25,16 @@ import {
  */
 const BarChartContainer = ({ title, data }) => {
   return (
-    <ResponsiveContainer height={300} style={barChartContainerStyle}>
+    <ResponsiveContainer width="100%">
       <BarChart
         data={data}
         barGap={barStyle.gap}
         barSize={barStyle.width}
         barCategoryGap={barStyle.barsGap}
-        style={barChartStyle}
       >
         <text
-          x="0"
-          y="0"
+          x={0}
+          y={0}
           textAnchor="start"
           dominantBaseline="hanging"
           style={barChartTitleStyle}
