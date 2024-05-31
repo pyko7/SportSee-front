@@ -26,41 +26,40 @@ const Dashboard = () => {
     <>
       {isLoading ? <Loader /> : null}
       {error ? <Error error={error} /> : null}
-      <div className="dashboard">
-        {user && <DashboardHeader firstName={user.firstName} />}
-        <div className="charts-cards-container">
-          <div className="charts-container">
-            <div className="charts-top-container">
-              <ActivityComponent />
-            </div>
-            <div className="charts-bottom-container">
-              <div className="charts-bottom">
-                <AverageSessionsComponent />
+      {user && (
+        <div className="dashboard">
+          <DashboardHeader firstName={user.firstName} />
+          <div className="charts-cards-container">
+            <div className="charts-container">
+              <div className="charts-top-container">
+                <ActivityComponent />
               </div>
-              <div className="charts-bottom">
-                <PerformanceComponent />
-              </div>
-              {user && (
+              <div className="charts-bottom-container">
+                <div className="charts-bottom">
+                  <AverageSessionsComponent />
+                </div>
+                <div className="charts-bottom">
+                  <PerformanceComponent />
+                </div>
+
                 <Score
                   score={user.todayScore}
                   isLoading={isLoading}
                   error={error}
                 />
-              )}
+              </div>
             </div>
-          </div>
-          <div className="cards-container">
-            {user && (
+            <div className="cards-container">
               <CardContainer
                 calorieCount={user.calorieCount}
                 proteinCount={user.proteinCount}
                 carbohydrateCount={user.carbohydrateCount}
                 lipidCount={user.lipidCount}
               />
-            )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
